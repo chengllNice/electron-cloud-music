@@ -1,0 +1,52 @@
+@import "../mixin";
+
+.left-nav{
+  width: $left-nav-width;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $left-nav-background-color;
+
+  .list-body{
+    .list-item:not(.list-item-group){
+      height: $left-nav-item-height;
+      line-height: $left-nav-item-height;
+      color: $left-nav-font-color;
+      transition: all $animation-time ease-in-out;
+      cursor: pointer;
+      @include ellipsis(1);
+
+      &:hover,
+      &:focus,
+      &:active{
+        background-color: $left-nav-hover-background-color;
+      }
+    }
+    .list-item-icon{
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 16px;
+    }
+    .list-item-name{
+      display: inline-block;
+      font-size: 14px;
+    }
+    .list-item-group{
+      margin-top: 20px;
+      cursor: default;
+      &>.list-item-name{
+        color: $left-nav-group-font-color;
+        margin-bottom: 5px;
+      }
+    }
+    .list-item-selected{
+      background-color: $left-nav-hover-background-color;
+      .list-item-icon{
+        color: $left-nav-selected-font-color;
+      }
+      .list-item-name{
+        color: $left-nav-selected-font-color;
+      }
+    }
+  }
+}

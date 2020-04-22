@@ -1,0 +1,48 @@
+
+.footer-mac{
+  //box-shadow: 2px 2px 5px #999;
+  .play-progress{
+    height: 6px;
+    background: #c2c2c4;
+
+    .play-progress-current{
+      height: 100%;
+      background: #e83c3c;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+    }
+
+    .play-progress-inner{
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      right: -6px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: #ffffff;
+      border: 1px solid #cacaca;
+      border-radius: 50%;
+      cursor: pointer;
+      img{
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        animation: rotateLoading 1s linear infinite;
+      }
+      &:hover{
+        box-shadow: 0 0 12px #cacaca;
+      }
+    }
+  }
+  .play-info{
+
+  }
+}
