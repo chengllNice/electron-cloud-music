@@ -1,19 +1,14 @@
 <template>
-    <div class="main">
-
-    </div>
+    <div class="song-item"></div>
 </template>
 
 <script>
     export default {
-        name: "main",
+        name: "song-item",
         data(){
             return {
 
             }
-        },
-        computed: {
-
         },
         mounted(){
 

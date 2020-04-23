@@ -3,9 +3,11 @@
         <header-mac class="layout-header"></header-mac>
         <div class="layout-main">
             <left-nav></left-nav>
-            <div class="lrc-panel" v-show="lrcPanalShow"></div>
-            <router-view/>
+            <div class="layout-main-view">
+                <router-view></router-view>
+            </div>
         </div>
+        <div class="lrc-panel" v-show="lrcPanalShow"></div>
         <footer-mac class="layout-footer"></footer-mac>
     </div>
 </template>

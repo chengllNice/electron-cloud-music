@@ -7,7 +7,7 @@ import '@/styles/components/iview-themes/var.less'
 import '@/styles/index.scss'
 
 //全局组件
-import CommonComponents from 'components/index.js'
+import CommonComponents from '@/components'
 
 //全局方法
 import CommonFuc from '@/utils'

@@ -1,13 +1,20 @@
 import Header from './header'
 import Footer from './footer'
 import LeftNav from './left-nav'
+import HeaderMenu from './header-menu'
+import Carousel from './carousel'
+import SongList from './song-list'
 
 const components = {
     HeaderMac: Header.mac,
     HeaderWin: Header.win,
     FooterMac: Footer.mac,
     FooterWin: Footer.win,
-    LeftNav
+    LeftNav,
+    HeaderMenu,
+    Carousel,
+    SongList,
+    SongItem: SongList.item,
 };
 
 const install = (Vue) => {

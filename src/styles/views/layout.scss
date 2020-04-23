@@ -16,6 +16,11 @@
     //height: calc(100% - #{$header-height + $footer-height});
     height: 100%;
     overflow: hidden;
+    display: flex;
+  }
+  .layout-main-view{
+    width: calc(100% - #{$left-nav-width});
+    padding: 0 30px;
   }
   .layout-footer{
     position: fixed;

@@ -1,0 +1,26 @@
+
+.header-menu{
+  display: flex;
+  align-items: center;
+  color: $font-color;
+  &.header-menu-left{
+    justify-content: left;
+  }
+  &.header-menu-center{
+    justify-content: center;
+  }
+  &.header-menu-right{
+    justify-content: right;
+  }
+  .header-menu-item{
+    margin: 10px 10px;
+    cursor: pointer;
+    transition: all $animation-time ease-in-out;
+    &:hover{
+      color: $font-active-color;
+    }
+  }
+  .header-menu-item-selected{
+    color: $font-active-color;
+  }
+}

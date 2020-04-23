@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Layout from '@/views/layout'
-import Main from '@/views/main/main'
+
+import findMusic from './find-music-router'
 
 Vue.use(VueRouter)
 
@@ -10,20 +11,16 @@ const routes = [
         path: '/',
         name: 'layout',
         component: Layout,
-        redirect: '/main',
+        redirect: '/find-music',
         children: [
-            {
-                path: '/main',
-                name: 'main',
-                component: Main,
-            }
+            findMusic
         ]
     }
 ];
 
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
+    // mode: 'history',
+    // base: process.env.BASE_URL,
     routes
 })
 
