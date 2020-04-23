@@ -4,6 +4,7 @@ import LeftNav from './left-nav'
 import HeaderMenu from './header-menu'
 import Carousel from './carousel'
 import SongList from './song-list'
+import BaseTitle from './base-title'
 
 const components = {
     HeaderMac: Header.mac,
@@ -15,6 +16,7 @@ const components = {
     Carousel,
     SongList,
     SongItem: SongList.item,
+    BaseTitle
 };
 
 const install = (Vue) => {

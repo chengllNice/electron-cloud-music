@@ -1,11 +1,18 @@
 <template>
     <div class="personal-recommendation">
         <carousel :data="bannerData" @click="bannerClick"></carousel>
+
+        <base-title title="推荐歌单">
+            <span>更多</span>
+        </base-title>
+        <song-list :data="recommendedSongList"></song-list>
     </div>
 </template>
 
 <script>
-    import {getBanner} from "@/server/find-music";
+    import {
+        getBanner,
+        getRecommendedSongList} from "@/server/find-music";
     import Config from '@/config/config'
     import CommonMixins from '@/views/main/mixins/common-mixins'
 
@@ -14,7 +21,8 @@
         mixins: [CommonMixins],
         data(){
             return {
-                bannerData: []
+                bannerData: [],
+                recommendedSongList: []
             }
         },
         mounted(){
@@ -23,10 +31,26 @@
         methods: {
             initData(){
                 this.getBannerData();
+                this.getPersonalized();
             },
             async getBannerData(){
                 getBanner().then(res=> {
                     this.bannerData = res.banners;
+                })
+            },
+            //获取推荐歌单
+            async getPersonalized(){
+                let getData = {
+                    limit: 10
+                };
+                getRecommendedSongList(getData).then(res=> {
+                    let data = res.result;
+                    data.forEach(item=>{
+                        item.playCount = this.$unitFormat(item.playCount, '万')
+                    });
+                    this.recommendedSongList = data;
+                    // this.recommend_data.data.push(...format_data);
+                    // this.$unitFormat(this.recommend_data.data, 'playCount');
                 })
             },
             async bannerClick(data){

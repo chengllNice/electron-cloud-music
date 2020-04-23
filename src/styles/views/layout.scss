@@ -21,6 +21,8 @@
   .layout-main-view{
     width: calc(100% - #{$left-nav-width});
     padding: 0 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .layout-footer{
     position: fixed;

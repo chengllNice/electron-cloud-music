@@ -1,0 +1,20 @@
+.base-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+
+  .title{
+    font-size: 18px;
+    font-weight: normal;
+  }
+
+  .slot{
+    font-size: 12px;
+  }
+
+  &.base-title-under-line{
+    border-bottom: 1px solid #e1e1e2;
+    padding-bottom: 8px;
+  }
+}

@@ -195,6 +195,57 @@ const typeOf = (obj) => {
 };
 
 
+/**
+ * 获取对象的值
+ * @param obj
+ * @param text
+ * @returns {*}
+ */
+export const getObjectValue = function(obj, text) {
+    try {
+        if ((typeOf(obj) === 'object' || typeOf(obj) === 'array') && text) {
+            let textArray = text.split('.');
+            let get_value = function(obj, textArray) {
+                let key = textArray.shift();
+                if (key.length < 5 && parseInt(key)) {
+                    key = parseInt(key);
+                }
+                if (typeof obj[key] === 'undefined' || obj[key] == null) {
+                    return '';
+                }
+                if (textArray.length === 0) {
+                    return obj[key];
+                }
+                obj = obj[key];
+                return get_value(obj, textArray);
+            };
+            return get_value(obj, textArray);
+        }
+        return '';
+    } catch (error) {
+        // debugger
+        console.log(error);
+    }
+};
+
+/**
+ * 单位格式化
+ * @param value
+ * @param unit
+ */
+const unitFormat = (value, unit = '') => {
+    if(isNaN(value)) return value;
+    let len = 1;
+    switch (unit) {
+        case '万':
+            len = 5;
+            break;
+    }
+    console.log(len, Math.floor(value / Math.pow(10,len - 1)))
+    return Math.floor(value / Math.pow(10,len - 1)) + unit;
+};
+
+
 
 const localStorage = {
     setStorage,
@@ -206,5 +257,7 @@ export default {
     localStorage,
     timeFormat,
     isCurrentMusic,
-    typeOf
+    typeOf,
+    getObjectValue,
+    unitFormat
 }

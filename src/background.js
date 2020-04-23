@@ -24,7 +24,7 @@ function createWindow() {
         },
         titleBarStyle: 'hidden',
         useContentSize: true,
-        // frame: false,//去掉默认标题栏
+        frame: false,//去掉默认标题栏
         title: 'CloudMusic',
     })
 

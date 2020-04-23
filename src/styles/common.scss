@@ -1,6 +1,10 @@
 
 @import "mixin";
 
-.ellipsis{
+.ellipsis-1{
   @include ellipsis(1)
+}
+
+.ellipsis-2{
+  @include ellipsis(2)
 }
