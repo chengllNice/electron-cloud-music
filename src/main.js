@@ -18,8 +18,10 @@ Vue.use(CommonComponents);
 
 Vue.config.productionTip = false;
 
-new Vue({
+const mainVue = new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
+
+export default mainVue;

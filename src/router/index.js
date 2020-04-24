@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Layout from '@/views/layout'
 
 import findMusic from './find-music-router'
+import songDetail from './song-detail-router'
 
 Vue.use(VueRouter)
 
@@ -13,7 +14,8 @@ const routes = [
         component: Layout,
         redirect: '/find-music',
         children: [
-            findMusic
+            findMusic,
+            songDetail
         ]
     }
 ];

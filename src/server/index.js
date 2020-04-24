@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Vue from 'vue';
+import mainVue from '@/main';
 
 
 let cancelList = [];//用于存放所有请求
@@ -7,7 +7,7 @@ let cancelList = [];//用于存放所有请求
 const axiosConfig = {
   baseURL: '/cloud/api',
   timeout: 600000,
-  headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 };
 
 
@@ -29,7 +29,7 @@ instace.interceptors.request.use(function (config) {
   }
   return config;
 }, function (error) {
-  Vue.$message.error('接口请求报错了...嗯...');
+  mainVue.$Message.error('接口请求报错了...嗯...');
   // 对请求错误做些什么
   return Promise.reject(error);
 });
@@ -46,12 +46,18 @@ instace.interceptors.response.use(function (response) {
 }, function (error) {
 
   // 对响应错误做点什么
-  console.log(error,'error');
-  // console.log(error.response.data);
+  // console.log(error,'error');
+  // console.log(error.response);
   // console.log(error.response.status);
   // console.log(error.response.headers);
+  let errorData = {
+    msg: '接口响应失败'
+  };
+  if(error && error.response && error.response.data && typeof error.response.data === 'object'){
+    errorData = error.response.data;
+  }
 
-  return Promise.reject(error && error.response && error.response.data);
+  return Promise.reject(errorData);
 });
 
 
@@ -67,7 +73,8 @@ const ajaxBase = (method, url, params, data) => {
   }).then(response=>{
     return Promise.resolve(response)
   }).catch(error=>{
-    Vue.$message.error(error.data.msg || 'error');
+    console.log(error.msg,'error');
+    mainVue.$Message.error(error.msg || 'error');
     return Promise.reject(error)
   });
 };

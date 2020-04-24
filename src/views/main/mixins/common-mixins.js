@@ -42,7 +42,7 @@ export default {
                         album_name: data.al,
                         alias: data.alia,
                         artists: data.ar,
-                        duration: this.$timeFormat(data.dt),
+                        duration: this.$timeFormat(data.dt, 'time', 'mm:ss'),
                         id: id,
                         maxbr: res.privileges[0].maxbr,
                         mvid: data.mv,

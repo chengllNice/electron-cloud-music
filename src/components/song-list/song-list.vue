@@ -3,9 +3,11 @@
         <song-item v-for="(item, index) in data"
                    :key="index"
                    :data="item"
+                   :x="x"
+                   :y="y"
                    :ellipsis="ellipsis"
                    :class="itemClass(item, index)"
-                   :style="itemStyle"></song-item>
+                   :style="itemStyle" @click="handleClick"></song-item>
     </div>
 </template>
 
@@ -21,12 +23,14 @@
             },
             colNum: {
                 type: Number,
-                default: 5
+                default: 4
             },
             ellipsis: {
                 type: Number,
                 default: 1
-            }
+            },
+            x: Number,
+            y: Number,
         },
         data() {
             return {}
@@ -48,6 +52,10 @@
         mounted() {
 
         },
-        methods: {}
+        methods: {
+            handleClick(data){
+                this.$emit('click', data)
+            }
+        }
     }
 </script>

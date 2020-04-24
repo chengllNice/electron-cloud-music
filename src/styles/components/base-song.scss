@@ -1,0 +1,17 @@
+
+//base-song-name
+.base-song-name{
+  @include ellipsis(1);
+  .description{
+    color: $description-font-color;
+  }
+}
+
+//base-song-singer
+.base-song-singer{
+  @include ellipsis(1);
+  font-size: 12px;
+  .name{
+    cursor: pointer;
+  }
+}

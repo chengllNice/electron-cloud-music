@@ -2,7 +2,7 @@
 .song-item{
   position: relative;
   overflow: hidden;
-  padding: 10px;
+  padding: 10px 10px 40px 10px;
 
   &.song-item-ellipsis-1{
     .song-name{
@@ -11,20 +11,29 @@
   }
   &.song-item-ellipsis-2{
     .song-name{
-      @include ellipsis(1)
+      @include ellipsis(2)
     }
   }
   .song-img{
     cursor: pointer;
     border: 1px solid #e7e7e7;
     position: relative;
+    margin-bottom: 5px;
     img{
       width: 100%;
       height: 100%;
     }
   }
   .song-name{
-
+    color: $font-color;
+    cursor: pointer;
+    font-size: 13px;
+    &:hover{
+      color: $blank-font-color;
+    }
+  }
+  .song-artists{
+    color: $description-font-color;
   }
   .song-cover{
     width: 100%;
@@ -33,15 +42,14 @@
     top: 0;
     left: 0;
     cursor: pointer;
+    box-shadow: inset 0px 30px 20px -10px rgba(0, 0, 0, 0.6);
 
     .song-play-count{
-      width: 100%;
       line-height: 22px;
       padding: 0 5px;
       color: #f9f9f9;
       text-align: right;
       font-size: 12px;
-      background-image: linear-gradient(to right, rgba(232,234,236,0.1), rgba(0,0,0,0.2), rgba(0,0,0,0.7));
     }
   }
 }

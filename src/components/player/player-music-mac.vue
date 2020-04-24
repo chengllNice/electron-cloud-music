@@ -97,9 +97,9 @@
             jplayerTimeUpdate(){
                 this.jPlayer.bind($.jPlayer.event.timeupdate, (e) => {
                     this.loading=false;
-                    this.duration.text = this.$timeFormat( e.jPlayer.status.duration * 1000 );
+                    this.duration.text = this.$timeFormat( e.jPlayer.status.duration * 1000, 'time', 'mm:ss');
                     this.duration.m = e.jPlayer.status.duration;
-                    this.currentTime.text = this.$timeFormat( e.jPlayer.status.currentTime * 1000 );
+                    this.currentTime.text = this.$timeFormat( e.jPlayer.status.currentTime * 1000, 'time', 'mm:ss' );
                     this.currentTime.m = e.jPlayer.status.currentTime;
                     this.playPrecent = e.jPlayer.status.currentPercentAbsolute;
                     this.volume = this.$typeOf(e.jPlayer.status.volume) === 'undefined' ? this.volume : e.jPlayer.status.volume * 100;

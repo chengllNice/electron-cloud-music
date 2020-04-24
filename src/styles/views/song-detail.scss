@@ -1,0 +1,50 @@
+
+.song-detail-info{
+  display: flex;
+  font-size: 12px;
+  .cover{
+    margin-right: 30px;
+  }
+
+  .title-info{
+    .type{
+      border: 1px solid $base-color;
+      color: $base-color;
+      padding: 2px 5px;
+      border-radius: 2px;
+      margin-right: 10px;
+    }
+    .title{
+      font-size: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  .tags-info .name{
+    color: #387adc;
+
+  }
+
+  .user-info{
+    &>*{
+      margin-right: 10px;
+    }
+    .user-name{
+      color: #387adc;
+    }
+  }
+
+  .description-info{
+    font-size: 12px;
+    span{
+      color: $description-font-color;
+    }
+  }
+}
+
+//歌曲列表
+.song-detail-list{
+  .album{
+    @include ellipsis(1);
+  }
+}

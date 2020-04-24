@@ -1,0 +1,18 @@
+.personal-recommendation{
+  .latest-music{
+    .latest-music-pre, .latest-music-next{
+      box-sizing: border-box;
+      width: 50%;
+      display: inline-block;
+    }
+    .latest-music-pre{
+      transform: translateX(-10px);
+    }
+    .latest-music-next{
+      transform: translateX(10px);
+    }
+    .index{
+      color: $description-font-color;
+    }
+  }
+}

@@ -1,6 +1,8 @@
 @import "base";
 @import "common";
-@import "views/layout";
+
+//components
+@import "components/iview-themes/replace-iview";
 @import "components/header-mac";
 @import "components/header-win";
 @import "components/footer-mac";
@@ -11,3 +13,10 @@
 @import "components/song-item";
 @import "components/song-list";
 @import "components/base-title";
+@import "components/base-song";
+
+
+// views
+@import "views/layout";
+@import "views/personal-recommendation";
+@import "views/song-detail";
