@@ -2,7 +2,7 @@
     <div class="base-song-singer">
         <slot></slot>
         <span class="singer-item" v-for="(item, index) in data" :key="index">
-            <span v-if="index !== 0"> / </span>
+            <template v-if="index !== 0"> / </template>
             <span class="name" @click="handleClick(item)">{{item.name}}</span>
         </span>
     </div>

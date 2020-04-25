@@ -1,16 +1,22 @@
 <template>
     <div class="song-detail-list">
-        <base-table :columns="columns" :data="data" stripe>
+        <base-table :columns="columns" :data="data" stripe :loading="loading">
             <template slot="index" slot-scope="data">
                 <span class="index">{{data.row.index}}</span>
             </template>
             <template slot="action" slot-scope="data">
-                <span class="index">{{data.row.index}}</span>
+                <span class="heart">
+                    <i class="iconfont icon-heart" @click="heartClick(data.row)"></i>
+                </span>
+                <span class="download">
+                    <i class="iconfont icon-download" @click="downloadClick(data.row)"></i>
+                </span>
             </template>
             <template slot="title" slot-scope="data">
-                <div class="title">
-                    <span class="index">{{data.row.name}}</span>
-                    <span v-if="data.row.sq">SQ</span>
+                <div class="song-title">
+                    <span class="song-name">{{data.row.name}}</span>
+                    <span class="sq" v-if="data.row.sq"><i class="iconfont icon-sq"></i></span>
+                    <span class="mv" v-if="data.row.mv" @click="mvClick(data.row)"><i class="iconfont icon-play-block"></i></span>
                 </div>
             </template>
             <template slot="singer" slot-scope="data">
@@ -37,11 +43,14 @@
                 id: this.$route.query.id,
                 columns: [
                     {
-                        title: '',
+                        title: ' ',
+                        width: 60,
+                        align: 'right',
                         slot: 'index',
                     },
                     {
-                        title: '',
+                        title: ' ',
+                        width: 80,
                         slot: 'action',
                     },
                     {
@@ -62,17 +71,22 @@
                         slot: 'duration',
                     }
                 ],
-                data: []
+                data: [],
+                loading: true
             }
         },
         mounted(){
-
+            this.getSongDetail();
         },
         methods: {
-            getSongDetail(ids){
+            getSongDetail(){
+                if(!this.detail || !this.detail.songIds || !Array.isArray(this.detail.songIds) || !this.detail.songIds.length){
+                    return
+                }
                 let getData = {
-                    ids: ids.join(',') || this.detail.songIds.join(',')
+                    ids: this.detail.songIds.join(',')
                 };
+                this.loading = true;
                 getSongDetail(getData).then(res => {
                     let songs = res.songs;
                     let privileges = res.privileges;
@@ -90,13 +104,23 @@
                         }
                     }
                     this.data = songs;
+                    this.loading = false;
                 })
+            },
+            heartClick(data){
+                console.log(data)
+            },
+            downloadClick(data){
+                console.log(data)
+            },
+            mvClick(data){
+                console.log(data)
             }
         },
         watch: {
             'detail.songIds': {
-                handler(newVal){
-                    this.getSongDetail(newVal);
+                handler(){
+                    this.getSongDetail();
                 },
                 deep: true
             }

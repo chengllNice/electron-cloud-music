@@ -2,8 +2,13 @@
 .song-detail-info{
   display: flex;
   font-size: 12px;
+  padding: 30px;
   .cover{
     margin-right: 30px;
+  }
+
+  .info{
+    flex: 1;
   }
 
   .title-info{
@@ -20,12 +25,15 @@
     }
   }
 
-  .tags-info .name{
-    color: #387adc;
-
+  .tags-info{
+    margin-top: 10px;
+    .name{
+      color: #387adc;
+    }
   }
 
   .user-info{
+    margin-top: 10px;
     &>*{
       margin-right: 10px;
     }
@@ -34,17 +42,64 @@
     }
   }
 
+  .count-info{
+    margin-top: 10px;
+  }
+
   .description-info{
+    margin-top: 10px;
     font-size: 12px;
+    position: relative;
     span{
       color: $description-font-color;
+    }
+
+    &.description-info-close{
+      @include ellipsis(2);
+    }
+
+    .open{
+      position: absolute;
+      right: 0;
+      top: 0;
     }
   }
 }
 
 //歌曲列表
 .song-detail-list{
+  .heart, .download{
+    color: $font-color;
+    opacity: 0.7;
+    cursor: pointer;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .heart{
+    margin-right: 5px;
+  }
+  .song-title{
+    display: flex;
+    align-items: center;
+  }
+  .song-name{
+    //flex: 1;
+    @include ellipsis(1);
+  }
   .album{
     @include ellipsis(1);
+  }
+  .sq, .mv{
+    color: $base-color;
+    margin-left: 5px;
+    vertical-align: middle;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .mv{
+    cursor: pointer;
   }
 }

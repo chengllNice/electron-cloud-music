@@ -1,5 +1,6 @@
 <template>
     <div class="base-table">
+        <Spin size="large" fix v-if="loading"></Spin>
         <Table :columns="columns"
                :data="data"
                :stripe="stripe"
@@ -16,6 +17,8 @@
                 <slot :name="slotItem.slot" v-bind="rowData"></slot>
             </template>
         </Table>
+
+        <base-page v-if="!(hidePageOnTotalNull && page.total === 0)" :total="page.total" :page="page.page" :page-size="page.pageSize"></base-page>
     </div>
 </template>
 
@@ -35,6 +38,20 @@
                     return []
                 }
             },
+            page: {
+                type: Object,
+                default(){
+                    return {
+                        total: 0,
+                        page: 1,
+                        pageSize: 0
+                    }
+                }
+            },
+            hidePageOnTotalNull: {
+                type: Boolean,
+                default: true
+            },
             showHeader: {
                 type: Boolean,
                 default: true
@@ -52,6 +69,10 @@
                 default: false
             },
             highlightRow: {
+                type: Boolean,
+                default: false
+            },
+            loading: {
                 type: Boolean,
                 default: false
             }

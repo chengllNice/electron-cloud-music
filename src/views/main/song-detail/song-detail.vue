@@ -1,7 +1,7 @@
 <template>
     <div class="song-detail">
         <song-detail-info :data="detailInfo"></song-detail-info>
-        <header-menu v-model="selectedMenu" :data="menuList" position="center"></header-menu>
+        <header-menu v-model="selectedMenu" :data="menuList" position="left"></header-menu>
         <router-view></router-view>
     </div>
 </template>

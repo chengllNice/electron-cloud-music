@@ -5,19 +5,19 @@
         <base-title title="推荐歌单">
             <span>更多</span>
         </base-title>
-        <song-list :data="recommendedSongList" :ellipsis="2" :colNum="5" @click="recommendedSongClick"></song-list>
+        <base-song-list :data="recommendedSongList" :ellipsis="2" :colNum="5" @click="recommendedSongClick"></base-song-list>
 
         <base-title title="独家放送">
             <span>更多</span>
         </base-title>
-        <song-list :data="exclusiveDelivery" :ellipsis="2" :colNum="3" :y="180"></song-list>
+        <base-song-list :data="exclusiveDelivery" :ellipsis="2" :colNum="3" :y="180"></base-song-list>
 
 
         <base-title title="最新音乐">
             <span>更多</span>
         </base-title>
         <div class="latest-music">
-            <base-table class="latest-music-pre" :columns="latestMusic.columns" :data="latestMusic.data.slice(0,5)" :show-header="false">
+            <base-table class="pre" :columns="latestMusic.columns" :data="latestMusic.data.slice(0,5)" :show-header="false">
                 <template slot-scope="data" slot="picUrl">
                     <base-img :url="data.row.picUrl" :x="60" :y="60"></base-img>
                 </template>
@@ -27,14 +27,14 @@
                 <template slot-scope="data" slot="detail">
                     <base-song-name :name="data.row.name" :description="data.row.alias"></base-song-name>
                     <base-song-singer :data="data.row.song.artists">
-                        <span v-if="data.row.sq">SQ</span>
+                        <span class="sq" v-if="data.row.sq"><i class="iconfont icon-sq"></i></span>
                     </base-song-singer>
                 </template>
                 <template slot-scope="data" slot="mv">
-                    <span v-if="data.row.mv">mv</span>
+                    <span class="mv" v-if="data.row.mv" @click="mvClick(data.row)"><i class="iconfont icon-play-block"></i></span>
                 </template>
             </base-table>
-            <base-table class="latest-music-next" :columns="latestMusic.columns" :data="latestMusic.data.slice(5,10)" :show-header="false">
+            <base-table class="next" :columns="latestMusic.columns" :data="latestMusic.data.slice(5,10)" :show-header="false">
                 <template slot-scope="data" slot="picUrl">
                     <base-img :url="data.row.picUrl" :x="60" :y="60"></base-img>
                 </template>
@@ -44,11 +44,11 @@
                 <template slot-scope="data" slot="detail">
                     <base-song-name :name="data.row.name" :description="data.row.alias"></base-song-name>
                     <base-song-singer :data="data.row.song.artists">
-                        <span v-if="data.row.sq">SQ</span>
+                        <span class="sq" v-if="data.row.sq"><i class="iconfont icon-sq"></i></span>
                     </base-song-singer>
                 </template>
                 <template slot-scope="data" slot="mv">
-                    <span v-if="data.row.mv">mv</span>
+                    <span class="mv" v-if="data.row.mv" @click="mvClick(data.row)"><i class="iconfont icon-play-block"></i></span>
                 </template>
             </base-table>
         </div>
@@ -57,48 +57,48 @@
         <base-title title="推荐MV">
             <span>更多</span>
         </base-title>
-        <song-list :data="recommendedMv" :ellipsis="1" :colNum="4" :y="180"></song-list>
+        <base-song-list :data="recommendedMv" :ellipsis="1" :colNum="4" :y="180"></base-song-list>
 
 
         <base-title title="推荐电台">
             <span>更多</span>
         </base-title>
-        <div class="anchor-station">
-            <base-table class="pre" :columns="anchorStation.columns" :data="anchorStation.data.slice(0,5)" :show-header="false">
-                <template slot-scope="data" slot="picUrl">
-                    <base-img :url="data.row.picUrl" :x="60" :y="60"></base-img>
-                </template>
-                <template slot-scope="data" slot="index">
-                    <span class="index">{{data.row.index}}</span>
-                </template>
-                <template slot-scope="data" slot="detail">
-                    <base-song-name :name="data.row.name" :description="data.row.alias"></base-song-name>
-                    <base-song-singer :data="data.row.song.artists">
-                        <span v-if="data.row.sq">SQ</span>
-                    </base-song-singer>
-                </template>
-                <template slot-scope="data" slot="mv">
-                    <span v-if="data.row.mv">mv</span>
-                </template>
-            </base-table>
-            <base-table class="next" :columns="anchorStation.columns" :data="anchorStation.data.slice(5,10)" :show-header="false">
-                <template slot-scope="data" slot="picUrl">
-                    <base-img :url="data.row.picUrl" :x="60" :y="60"></base-img>
-                </template>
-                <template slot-scope="data" slot="index">
-                    <span>{{data.row.index}}</span>
-                </template>
-                <template slot-scope="data" slot="detail">
-                    <base-song-name :name="data.row.name" :description="data.row.alias"></base-song-name>
-                    <base-song-singer :data="data.row.song.artists">
-                        <span v-if="data.row.sq">SQ</span>
-                    </base-song-singer>
-                </template>
-                <template slot-scope="data" slot="mv">
-                    <span v-if="data.row.mv">mv</span>
-                </template>
-            </base-table>
-        </div>
+        <!--<div class="anchor-station">-->
+            <!--<base-table class="pre" :columns="anchorStation.columns" :data="anchorStation.data.slice(0,3)" :show-header="false">-->
+                <!--<template slot-scope="data" slot="picUrl">-->
+                    <!--<base-img :url="data.row.picUrl" :x="60" :y="60"></base-img>-->
+                <!--</template>-->
+                <!--<template slot-scope="data" slot="index">-->
+                    <!--<span class="index">{{data.row.index}}</span>-->
+                <!--</template>-->
+                <!--<template slot-scope="data" slot="detail">-->
+                    <!--<base-song-name :name="data.row.name" :description="data.row.alias"></base-song-name>-->
+                    <!--<base-song-singer :data="data.row.song.artists">-->
+                        <!--<span v-if="data.row.sq">SQ</span>-->
+                    <!--</base-song-singer>-->
+                <!--</template>-->
+                <!--<template slot-scope="data" slot="mv">-->
+                    <!--<span v-if="data.row.mv">mv</span>-->
+                <!--</template>-->
+            <!--</base-table>-->
+            <!--<base-table class="next" :columns="anchorStation.columns" :data="anchorStation.data.slice(3,6)" :show-header="false">-->
+                <!--<template slot-scope="data" slot="picUrl">-->
+                    <!--<base-img :url="data.row.picUrl" :x="60" :y="60"></base-img>-->
+                <!--</template>-->
+                <!--<template slot-scope="data" slot="index">-->
+                    <!--<span>{{data.row.index}}</span>-->
+                <!--</template>-->
+                <!--<template slot-scope="data" slot="detail">-->
+                    <!--<base-song-name :name="data.row.name" :description="data.row.alias"></base-song-name>-->
+                    <!--<base-song-singer :data="data.row.song.artists">-->
+                        <!--<span v-if="data.row.sq">SQ</span>-->
+                    <!--</base-song-singer>-->
+                <!--</template>-->
+                <!--<template slot-scope="data" slot="mv">-->
+                    <!--<span v-if="data.row.mv">mv</span>-->
+                <!--</template>-->
+            <!--</base-table>-->
+        <!--</div>-->
 
     </div>
 </template>
@@ -140,6 +140,7 @@
                 this.getExclusiveDelivery();
                 this.getLatestMusic();
                 this.getRecommendedMv();
+                this.getAnchorStation();
             },
             async getBannerData(){
                 getBanner().then(res=> {
@@ -196,19 +197,19 @@
             async getAnchorStation(){
                 getAnchorStation().then(res=>{
                     let data = res.result;
-                    data.forEach((item, index)=>{
-                        item.index = this.$zeroFormat(index + 1);
-                        let alias = '';
-                        if(item.song.alias && Array.isArray(item.song.alias)){
-                            item.song.alias.forEach(aliasItem=>{
-                                alias += `(${aliasItem}) `
-                            });
-                        }
-                        item.alias = alias;
-                        item.sq = this.$isPrivilege('sq', item.song.privilege);
-                        item.mv = this.$isPrivilege('mv', item.song);
-                    });
-                    this.latestMusic.data = data;
+                    // data.forEach((item, index)=>{
+                    //     item.index = this.$zeroFormat(index + 1);
+                    //     let alias = '';
+                    //     if(item.song.alias && Array.isArray(item.song.alias)){
+                    //         item.song.alias.forEach(aliasItem=>{
+                    //             alias += `(${aliasItem}) `
+                    //         });
+                    //     }
+                    //     item.alias = alias;
+                    //     item.sq = this.$isPrivilege('sq', item.song.privilege);
+                    //     item.mv = this.$isPrivilege('mv', item.song);
+                    // });
+                    this.anchorStation.data = data;
                 })
             },
             async bannerClick(data){

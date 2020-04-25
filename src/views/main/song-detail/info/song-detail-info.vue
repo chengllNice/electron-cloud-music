@@ -25,9 +25,10 @@
                 <span>{{data.trackCount}}</span>
 
                 播放数:
-                <span>{{data.playCount}}</span>
+                <span>{{playCount}}</span>
             </div>
-            <div class="description-info">
+            <div class="description-info" :class="[!open && 'description-info-close']">
+                <i :class="['open', 'iconfont', openType]" @click="openClick"></i>
                 简介: <span v-html="data.description"></span>
             </div>
         </div>
@@ -47,12 +48,22 @@
         },
         data(){
             return {
-
+                openType: 'icon-down',
+                open: false
+            }
+        },
+        computed: {
+            playCount(){
+                return this.$unitFormat(this.data.playCount, '万')
             }
         },
         methods: {
             tagClick(){
 
+            },
+            openClick(){
+                this.open = !this.open;
+                this.openType = this.open ? 'icon-up' : 'icon-down';
             }
         }
     }

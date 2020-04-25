@@ -3,12 +3,12 @@ import Footer from './footer'
 import LeftNav from './left-nav'
 import HeaderMenu from './header-menu'
 import Carousel from './carousel'
-import SongList from './song-list'
 import BaseTitle from './base-title'
 import BaseTable from './base-table'
 import BaseImg from './base-img'
 import BaseSong from './base-song'
 import BaseTabs from './base-tabs'
+import BasePage from './base-page'
 
 const components = {
     HeaderMac: Header.mac,
@@ -18,15 +18,16 @@ const components = {
     LeftNav,
     HeaderMenu,
     Carousel,
-    SongList,
-    SongItem: SongList.item,
     BaseTitle,
     BaseTable,
     BaseImg,
     BaseSongName: BaseSong.name,
     BaseSongSinger: BaseSong.singer,
     BaseSongDetail: BaseSong.detail,
-    BaseTabs
+    BaseSongList: BaseSong.list,
+    BaseSongItem: BaseSong.item,
+    BaseTabs,
+    BasePage
 };
 
 const install = (Vue) => {

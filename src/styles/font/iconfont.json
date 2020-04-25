@@ -1,0 +1,366 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "54613274",
+      "name": "star-fill",
+      "font_class": "star-fill",
+      "unicode": "e8a7",
+      "unicode_decimal": 59559
+    },
+    {
+      "icon_id": "54613275",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e8a8",
+      "unicode_decimal": 59560
+    },
+    {
+      "icon_id": "54613276",
+      "name": "up",
+      "font_class": "up",
+      "unicode": "e8a9",
+      "unicode_decimal": 59561
+    },
+    {
+      "icon_id": "54613277",
+      "name": "close",
+      "font_class": "close",
+      "unicode": "e8aa",
+      "unicode_decimal": 59562
+    },
+    {
+      "icon_id": "54613278",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e8ab",
+      "unicode_decimal": 59563
+    },
+    {
+      "icon_id": "54613279",
+      "name": "video",
+      "font_class": "video",
+      "unicode": "e8ac",
+      "unicode_decimal": 59564
+    },
+    {
+      "icon_id": "54613280",
+      "name": "theme",
+      "font_class": "theme",
+      "unicode": "e8ad",
+      "unicode_decimal": 59565
+    },
+    {
+      "icon_id": "54613281",
+      "name": "v",
+      "font_class": "v",
+      "unicode": "e8ae",
+      "unicode_decimal": 59566
+    },
+    {
+      "icon_id": "54613282",
+      "name": "floder-fill",
+      "font_class": "floder-fill",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    },
+    {
+      "icon_id": "54613283",
+      "name": "floder-add",
+      "font_class": "floder-add",
+      "unicode": "e8b0",
+      "unicode_decimal": 59568
+    },
+    {
+      "icon_id": "54613284",
+      "name": "heart-fill",
+      "font_class": "heart-fill",
+      "unicode": "e8b1",
+      "unicode_decimal": 59569
+    },
+    {
+      "icon_id": "54613285",
+      "name": "loop",
+      "font_class": "loop",
+      "unicode": "e8b2",
+      "unicode_decimal": 59570
+    },
+    {
+      "icon_id": "54613286",
+      "name": "mark-singer-fill",
+      "font_class": "mark-singer-fill",
+      "unicode": "e8b3",
+      "unicode_decimal": 59571
+    },
+    {
+      "icon_id": "54613287",
+      "name": "down",
+      "font_class": "down",
+      "unicode": "e8b4",
+      "unicode_decimal": 59572
+    },
+    {
+      "icon_id": "54613288",
+      "name": "floder",
+      "font_class": "floder",
+      "unicode": "e8b5",
+      "unicode_decimal": 59573
+    },
+    {
+      "icon_id": "54613289",
+      "name": "vip",
+      "font_class": "vip",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    },
+    {
+      "icon_id": "54613290",
+      "name": "mv",
+      "font_class": "mv",
+      "unicode": "e8b7",
+      "unicode_decimal": 59575
+    },
+    {
+      "icon_id": "54613291",
+      "name": "list",
+      "font_class": "list",
+      "unicode": "e8b8",
+      "unicode_decimal": 59576
+    },
+    {
+      "icon_id": "54613292",
+      "name": "mini",
+      "font_class": "mini",
+      "unicode": "e8b9",
+      "unicode_decimal": 59577
+    },
+    {
+      "icon_id": "54613293",
+      "name": "v-fill",
+      "font_class": "v-fill",
+      "unicode": "e8ba",
+      "unicode_decimal": 59578
+    },
+    {
+      "icon_id": "54613294",
+      "name": "floder-success",
+      "font_class": "floder-success",
+      "unicode": "e8bb",
+      "unicode_decimal": 59579
+    },
+    {
+      "icon_id": "54613295",
+      "name": "play-circle",
+      "font_class": "play-circle",
+      "unicode": "e8bc",
+      "unicode_decimal": 59580
+    },
+    {
+      "icon_id": "54613296",
+      "name": "plus",
+      "font_class": "plus",
+      "unicode": "e8bd",
+      "unicode_decimal": 59581
+    },
+    {
+      "icon_id": "54613297",
+      "name": "lyric",
+      "font_class": "lyric",
+      "unicode": "e8be",
+      "unicode_decimal": 59582
+    },
+    {
+      "icon_id": "54613298",
+      "name": "mark-singer",
+      "font_class": "mark-singer",
+      "unicode": "e8bf",
+      "unicode_decimal": 59583
+    },
+    {
+      "icon_id": "54613299",
+      "name": "left",
+      "font_class": "left",
+      "unicode": "e8c0",
+      "unicode_decimal": 59584
+    },
+    {
+      "icon_id": "54613300",
+      "name": "heart",
+      "font_class": "heart",
+      "unicode": "e8c1",
+      "unicode_decimal": 59585
+    },
+    {
+      "icon_id": "54613301",
+      "name": "remove",
+      "font_class": "remove",
+      "unicode": "e8c2",
+      "unicode_decimal": 59586
+    },
+    {
+      "icon_id": "54613302",
+      "name": "random",
+      "font_class": "random",
+      "unicode": "e8c3",
+      "unicode_decimal": 59587
+    },
+    {
+      "icon_id": "54613303",
+      "name": "plus-fill",
+      "font_class": "plus-fill",
+      "unicode": "e8c4",
+      "unicode_decimal": 59588
+    },
+    {
+      "icon_id": "54613304",
+      "name": "right",
+      "font_class": "right",
+      "unicode": "e8c5",
+      "unicode_decimal": 59589
+    },
+    {
+      "icon_id": "54613305",
+      "name": "play",
+      "font_class": "play",
+      "unicode": "e8c6",
+      "unicode_decimal": 59590
+    },
+    {
+      "icon_id": "54613306",
+      "name": "play-block",
+      "font_class": "play-block",
+      "unicode": "e8c7",
+      "unicode_decimal": 59591
+    },
+    {
+      "icon_id": "54613307",
+      "name": "sequence",
+      "font_class": "sequence",
+      "unicode": "e8c8",
+      "unicode_decimal": 59592
+    },
+    {
+      "icon_id": "54613308",
+      "name": "music",
+      "font_class": "music",
+      "unicode": "e8c9",
+      "unicode_decimal": 59593
+    },
+    {
+      "icon_id": "54613309",
+      "name": "song-list",
+      "font_class": "song-list",
+      "unicode": "e8ca",
+      "unicode_decimal": 59594
+    },
+    {
+      "icon_id": "54613310",
+      "name": "scale",
+      "font_class": "scale",
+      "unicode": "e8cb",
+      "unicode_decimal": 59595
+    },
+    {
+      "icon_id": "54613311",
+      "name": "play-next",
+      "font_class": "play-next",
+      "unicode": "e8cc",
+      "unicode_decimal": 59596
+    },
+    {
+      "icon_id": "54613312",
+      "name": "radio",
+      "font_class": "radio",
+      "unicode": "e8cd",
+      "unicode_decimal": 59597
+    },
+    {
+      "icon_id": "54613313",
+      "name": "star",
+      "font_class": "star",
+      "unicode": "e8ce",
+      "unicode_decimal": 59598
+    },
+    {
+      "icon_id": "54613314",
+      "name": "play-pre",
+      "font_class": "play-pre",
+      "unicode": "e8cf",
+      "unicode_decimal": 59599
+    },
+    {
+      "icon_id": "54613315",
+      "name": "remove-fill",
+      "font_class": "remove-fill",
+      "unicode": "e8d0",
+      "unicode_decimal": 59600
+    },
+    {
+      "icon_id": "54613316",
+      "name": "single-loop",
+      "font_class": "single-loop",
+      "unicode": "e8d1",
+      "unicode_decimal": 59601
+    },
+    {
+      "icon_id": "54613317",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e8d2",
+      "unicode_decimal": 59602
+    },
+    {
+      "icon_id": "54613318",
+      "name": "sq",
+      "font_class": "sq",
+      "unicode": "e8d3",
+      "unicode_decimal": 59603
+    },
+    {
+      "icon_id": "54613319",
+      "name": "setting",
+      "font_class": "setting",
+      "unicode": "e8d4",
+      "unicode_decimal": 59604
+    },
+    {
+      "icon_id": "54613320",
+      "name": "zoom",
+      "font_class": "zoom",
+      "unicode": "e8d5",
+      "unicode_decimal": 59605
+    },
+    {
+      "icon_id": "54613321",
+      "name": "download",
+      "font_class": "download",
+      "unicode": "e8d6",
+      "unicode_decimal": 59606
+    },
+    {
+      "icon_id": "54626811",
+      "name": "volume",
+      "font_class": "volume",
+      "unicode": "e8d7",
+      "unicode_decimal": 59607
+    },
+    {
+      "icon_id": "54626812",
+      "name": "volume-fill",
+      "font_class": "volume-fill",
+      "unicode": "e8d8",
+      "unicode_decimal": 59608
+    },
+    {
+      "icon_id": "54627490",
+      "name": "quality-song",
+      "font_class": "quality-song",
+      "unicode": "e8d9",
+      "unicode_decimal": 59609
+    }
+  ]
+}

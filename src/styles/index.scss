@@ -1,6 +1,8 @@
 @import "base";
 @import "common";
 
+@import "font/iconfont.css";
+
 //components
 @import "components/iview-themes/replace-iview";
 @import "components/header-mac";
@@ -10,13 +12,12 @@
 @import "components/left-nav";
 @import "components/header-menu";
 @import "components/carousel";
-@import "components/song-item";
-@import "components/song-list";
 @import "components/base-title";
 @import "components/base-song";
+@import "components/base-table";
 
 
 // views
 @import "views/layout";
-@import "views/personal-recommendation";
 @import "views/song-detail";
+@import "views/find-music";

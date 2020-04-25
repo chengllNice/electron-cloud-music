@@ -1,3 +1,33 @@
-.find-music{
+
+.personal-recommendation, .song-list{
   padding: 0 30px 30px 30px;
+}
+
+//个性推荐
+.personal-recommendation{
+  .latest-music, .anchor-station{
+    .pre, .next{
+      box-sizing: border-box;
+      width: 50%;
+      display: inline-block;
+    }
+    .pre{
+      transform: translateX(-10px);
+    }
+    .next{
+      transform: translateX(10px);
+    }
+    .index{
+      color: $description-font-color;
+    }
+  }
+  .latest-music{
+
+  }
+}
+
+
+//歌单song-list
+.song-list{
+
 }

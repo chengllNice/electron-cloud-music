@@ -1,19 +1,22 @@
 <template>
-    <div class="song-list">
-        <song-item v-for="(item, index) in data"
+    <div class="base-song-list">
+        <Spin size="large" fix v-if="loading"></Spin>
+        <div class="no-data" v-if="!data.length">暂无数据</div>
+        <slot></slot>
+        <base-song-item v-for="(item, index) in data"
                    :key="index"
                    :data="item"
                    :x="x"
                    :y="y"
                    :ellipsis="ellipsis"
                    :class="itemClass(item, index)"
-                   :style="itemStyle" @click="handleClick"></song-item>
+                   :style="itemStyle" @click="handleClick"></base-song-item>
     </div>
 </template>
 
 <script>
     export default {
-        name: "song-list",
+        name: "base-song-list",
         props: {
             data: {
                 type: Array,
@@ -31,6 +34,10 @@
             },
             x: Number,
             y: Number,
+            loading: {
+                type: Boolean,
+                default: false
+            }
         },
         data() {
             return {}

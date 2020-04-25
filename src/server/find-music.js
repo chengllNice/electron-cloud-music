@@ -20,3 +20,11 @@ export const getRecommendedMv = data => ajaxGet('/personalized/mv',data);
 
 // 推荐电台
 export const getAnchorStation = data => ajaxGet('/personalized/djprogram',data);
+
+
+// 歌单列表
+export const getSongList = data => ajaxGet('/top/playlist',data);
+
+
+// 精品歌单列表
+export const getQualitySongList = data => ajaxGet('/top/playlist/highquality',data);

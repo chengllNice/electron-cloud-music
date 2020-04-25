@@ -61,7 +61,8 @@
                 let path = this.$route.path;
                 if(path !== data.path){
                     this.$router.push({
-                        path: data.path
+                        path: data.path,
+                        query: {...this.$route.query, ...data.query}
                     });
                 }
                 this.$emit('input', this.currentValue);

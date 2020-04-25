@@ -274,12 +274,16 @@ export const getObjectValue = function(obj, text) {
 const unitFormat = (value, unit = '') => {
     if(isNaN(value)) return value;
     let len = 1;
+    let result = value;
     switch (unit) {
         case '万':
             len = 5;
             break;
     }
-    return Math.floor(value / Math.pow(10,len - 1)) + unit;
+    if(len <= value.toString().length){
+        result = Math.floor(value / Math.pow(10,len - 1)) + unit;
+    }
+    return result;
 };
 
 /**
