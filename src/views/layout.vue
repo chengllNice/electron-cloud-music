@@ -4,7 +4,9 @@
         <div class="layout-main">
             <left-nav></left-nav>
             <div class="layout-main-view">
-                <router-view></router-view>
+                <vue-scroll :ops="scrollOpt">
+                    <router-view></router-view>
+                </vue-scroll>
             </div>
         </div>
         <div class="lrc-panel" v-show="lrcPanalShow"></div>
@@ -14,10 +16,13 @@
 
 <script>
     import { mapState } from 'vuex'
+    import Config from '@/config/config'
     export default {
         name: "layout",
         data(){
-            return {}
+            return {
+                scrollOpt: Config.scrollOpt
+            }
         },
         computed: {
             ...mapState(['lrcPanalShow'])

@@ -13,12 +13,18 @@
                 <span class="user-name">{{data.creator.nickname}}</span>
                 <span>{{data.createTime}}创建</span>
             </div>
-            <div class="tags-info">
+            <div class="button-info">
+                <ButtonGroup>
+                    <base-button type="primary"><i class="iconfont icon-play"></i> 播放全部</base-button>
+                    <base-button type="primary"><i class="iconfont icon-plus"></i></base-button>
+                </ButtonGroup>
+                <base-button><i class="iconfont icon-floder-add"></i> 收藏 (<span>{{subscribedCount}}</span>)</base-button>
+                <base-button><i class="iconfont icon-plus"></i> 分享 (<span>{{shareCount}}</span>)</base-button>
+                <base-button><i class="iconfont icon-download"></i> 下载全部</base-button>
+            </div>
+            <div class="tags-info" v-if="data.tags && data.tags.length">
                 标签:
-                <span v-for="(item, index) in data.tags" :key="index">
-                    <span v-if="index !== 0"> / </span>
-                    <span class="name" @click="tagClick(item)">{{item}}</span>
-                </span>
+                <base-song-singer :data="data.tags"></base-song-singer>
             </div>
             <div class="count-info">
                 歌曲数:
@@ -27,7 +33,7 @@
                 播放数:
                 <span>{{playCount}}</span>
             </div>
-            <div class="description-info" :class="[!open && 'description-info-close']">
+            <div class="description-info" :class="[!open && 'description-info-close']" v-if="data.description">
                 <i :class="['open', 'iconfont', openType]" @click="openClick"></i>
                 简介: <span v-html="data.description"></span>
             </div>
@@ -55,7 +61,13 @@
         computed: {
             playCount(){
                 return this.$unitFormat(this.data.playCount, '万')
-            }
+            },
+            subscribedCount(){
+                return this.$unitFormat(this.data.subscribedCount, '万')
+            },
+            shareCount(){
+                return this.$unitFormat(this.data.shareCount, '万')
+            },
         },
         methods: {
             tagClick(){

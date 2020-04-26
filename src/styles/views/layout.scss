@@ -20,8 +20,9 @@
   }
   .layout-main-view{
     width: calc(100% - #{$left-nav-width});
-    overflow-y: auto;
-    overflow-x: hidden;
+    //overflow-y: auto;
+    //overflow-x: hidden;
+    overflow: hidden;
   }
   .layout-footer{
     position: fixed;

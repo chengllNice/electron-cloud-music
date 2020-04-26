@@ -1,11 +1,16 @@
 <template>
     <div :class="menuClass">
-        <div class="header-menu-item"
-             :class="[ currentValue === item.id && 'header-menu-item-selected']"
-             v-for="item in data"
-             :key="item.id"
-             @click="handleClick(item)">
-            {{item.name}}
+        <div class="header-menu-list">
+            <div class="header-menu-item"
+                 :class="[ currentValue === item.id && 'header-menu-item-selected']"
+                 v-for="item in data"
+                 :key="item.id"
+                 @click="handleClick(item)">
+                {{item.name}}
+            </div>
+        </div>
+        <div class="header-menu-slot">
+            <slot></slot>
         </div>
     </div>
 </template>
@@ -27,18 +32,21 @@
                 validate(value){
                     return ['left', 'center', 'right'].includes(value);
                 }
-            }
+            },
+            underline: Boolean,
         },
         data(){
             return {
-                currentValue: ''
+                currentValue: '',
             }
         },
         computed: {
             menuClass(){
                 return [
                     'header-menu',
-                    `header-menu-${this.position}`
+                    `header-menu-${this.position}`,
+                    this.underline && `header-menu-underline`,
+                    this.$slots.default && `is-slot`,
                 ]
             }
         },

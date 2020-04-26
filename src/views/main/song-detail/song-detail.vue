@@ -1,7 +1,9 @@
 <template>
     <div class="song-detail">
         <song-detail-info :data="detailInfo"></song-detail-info>
-        <header-menu v-model="selectedMenu" :data="menuList" position="left"></header-menu>
+        <header-menu v-model="selectedMenu" :data="menuList" position="left" underline>
+            123
+        </header-menu>
         <router-view></router-view>
     </div>
 </template>
@@ -56,14 +58,22 @@
                 getSongListDetail(getData).then(res => {
                     let playlist = res.playlist;
                     playlist.createTime = this.$timeFormat(playlist.createTime, 'date', 'YY-MM-DD');
-                    playlist.description = playlist.description.replace(/\n/g, '<br>');
+                    playlist.description = (playlist.description || '').replace(/\n/g, '<br>');
                     this.detailInfo = playlist;
                     let trackIds = this.detailInfo.trackIds;
+                    this.menuListFormat();
                     let ids = [];
                     trackIds.forEach(item=>{
                         ids.push(item.id)
                     });
                     this.songIds = ids;
+                })
+            },
+            menuListFormat(){
+                this.menuList.forEach(item =>{
+                    if(item.id === 'comment'){
+                        item.name = item.name + `(${this.detailInfo.commentCount})`
+                    }
                 })
             }
         }

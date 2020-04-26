@@ -25,6 +25,14 @@
     }
   }
 
+  .button-info{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    &>*{
+      margin-right: 10px;
+    }
+  }
+
   .tags-info{
     margin-top: 10px;
     .name{
@@ -68,27 +76,32 @@
 
 //歌曲列表
 .song-detail-list{
-  .heart, .download{
-    color: $font-color;
-    opacity: 0.7;
-    cursor: pointer;
-    &:hover{
-      opacity: 1;
+  .song-action{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i{
+      color: $font-color;
+      opacity: 0.7;
+      cursor: pointer;
+      &:hover{
+        opacity: 1;
+      }
     }
-  }
-  .heart{
-    margin-right: 5px;
   }
   .song-title{
     display: flex;
     align-items: center;
   }
   .song-name{
-    //flex: 1;
+    cursor: default;
     @include ellipsis(1);
   }
   .album{
     @include ellipsis(1);
+  }
+  .song-alia{
+    color: $description-font-color;
   }
   .sq, .mv{
     color: $base-color;

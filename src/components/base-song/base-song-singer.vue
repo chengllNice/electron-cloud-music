@@ -3,7 +3,7 @@
         <slot></slot>
         <span class="singer-item" v-for="(item, index) in data" :key="index">
             <template v-if="index !== 0"> / </template>
-            <span class="name" @click="handleClick(item)">{{item.name}}</span>
+            <span class="name" @click="handleClick(item)">{{isType === 'string' ? item : item.name}}</span>
         </span>
     </div>
 </template>
@@ -17,6 +17,11 @@
                 default(){
                     return []
                 }
+            }
+        },
+        computed: {
+            isType(){
+                return this.data.length && this.$typeOf(this.data[0])
             }
         },
         methods: {

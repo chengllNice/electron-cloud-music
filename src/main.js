@@ -5,6 +5,8 @@ import store from './store'
 import ViewUI from 'view-design';
 import '@/styles/components/iview-themes/var.less'
 import '@/styles/index.scss'
+import vuescroll from 'vuescroll'
+import 'vuescroll/dist/vuescroll.css';
 
 //全局组件
 import CommonComponents from '@/components'
@@ -13,6 +15,7 @@ import CommonComponents from '@/components'
 import CommonFuc from '@/utils'
 
 Vue.use(ViewUI);
+Vue.use(vuescroll);
 Vue.use(CommonFuc);
 Vue.use(CommonComponents);
 

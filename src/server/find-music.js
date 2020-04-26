@@ -28,3 +28,9 @@ export const getSongList = data => ajaxGet('/top/playlist',data);
 
 // 精品歌单列表
 export const getQualitySongList = data => ajaxGet('/top/playlist/highquality',data);
+
+// 获取歌单评论
+export const getSongListComment = (data) => ajaxGet('/comment/playlist',data);
+
+// 获取热门评论
+export const getHotComment = (data) => ajaxGet('/comment/hot',data);

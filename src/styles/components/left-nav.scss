@@ -3,18 +3,24 @@
 .left-nav{
   width: $left-nav-width;
   height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  //overflow-y: auto;
+  //overflow-x: hidden;
+  overflow: hidden;
   background-color: $left-nav-background-color;
 
+  .user-info{
+    padding: 15px;
+  }
+
   .list-body{
+    .list-item{
+      @include ellipsis(1);
+    }
     .list-item:not(.list-item-group){
-      height: $left-nav-item-height;
-      line-height: $left-nav-item-height;
       color: $left-nav-font-color;
       transition: all $animation-time ease-in-out;
       cursor: pointer;
-      @include ellipsis(1);
+      padding: 0 15px;
 
       &:hover,
       &:focus,
@@ -30,13 +36,15 @@
     .list-item-name{
       display: inline-block;
       font-size: 14px;
+      height: $left-nav-item-height;
+      line-height: $left-nav-item-height;
     }
     .list-item-group{
       margin-top: 20px;
       cursor: default;
       &>.list-item-name{
         color: $left-nav-group-font-color;
-        margin-bottom: 5px;
+        padding: 0 15px;
       }
     }
     .list-item-selected{

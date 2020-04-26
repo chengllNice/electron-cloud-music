@@ -9,6 +9,7 @@ import BaseImg from './base-img'
 import BaseSong from './base-song'
 import BaseTabs from './base-tabs'
 import BasePage from './base-page'
+import BaseButton from './base-button'
 
 const components = {
     HeaderMac: Header.mac,
@@ -27,7 +28,8 @@ const components = {
     BaseSongList: BaseSong.list,
     BaseSongItem: BaseSong.item,
     BaseTabs,
-    BasePage
+    BasePage,
+    BaseButton
 };
 
 const install = (Vue) => {

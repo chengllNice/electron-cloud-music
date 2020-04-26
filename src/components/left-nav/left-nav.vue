@@ -1,34 +1,38 @@
 <template>
     <div class="left-nav">
-        <div class="">
-            <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" />
+        <div class="user-info">
+            <Avatar src="https://i.loli.net/2017/08/21/599a521472424.jpg" size="large" />
         </div>
-        <div class="list-body">
-            <div :class="itemClass(item)" v-for="item in list" :key="item.id" @click="itemClick(item)">
-                <div class="list-item-icon" v-if="item.icon">
-                    <i :class="['iconfont', item.icon]"></i>
-                    <!--<Icon :type="item.icon" />-->
-                </div>
-                <div class="list-item-name">{{item.name}}</div>
-                <template v-if="item.children && item.children.length">
-                    <div class="list-item" v-for="children in item.children" :key="children.id" @click="itemClick(children)">
-                        <div class="list-item-icon" v-if="children.icon">
-                            <i :class="['iconfont', children.icon]"></i>
-                            <!--<Icon :type="children.icon" />-->
-                        </div>
-                        <div class="list-item-name">{{children.name}}</div>
+        <vue-scroll :ops="scrollOpt">
+            <div class="list-body">
+                <div :class="itemClass(item)" v-for="item in list" :key="item.id" @click="itemClick(item)">
+                    <div class="list-item-icon" v-if="item.icon">
+                        <i :class="['iconfont', item.icon]"></i>
+                        <!--<Icon :type="item.icon" />-->
                     </div>
-                </template>
+                    <div class="list-item-name">{{item.name}}</div>
+                    <template v-if="item.children && item.children.length">
+                        <div class="list-item" v-for="children in item.children" :key="children.id" @click="itemClick(children)">
+                            <div class="list-item-icon" v-if="children.icon">
+                                <i :class="['iconfont', children.icon]"></i>
+                                <!--<Icon :type="children.icon" />-->
+                            </div>
+                            <div class="list-item-name">{{children.name}}</div>
+                        </div>
+                    </template>
+                </div>
             </div>
-        </div>
+        </vue-scroll>
     </div>
 </template>
 
 <script>
+    import Config from '@/config/config'
     export default {
         name: "left-nav",
         data(){
             return {
+                scrollOpt: Config.scrollOpt,
                 theme3: 'light',
                 list: [
                     {

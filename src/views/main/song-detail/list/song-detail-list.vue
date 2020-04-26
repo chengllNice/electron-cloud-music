@@ -5,16 +5,19 @@
                 <span class="index">{{data.row.index}}</span>
             </template>
             <template slot="action" slot-scope="data">
-                <span class="heart">
-                    <i class="iconfont icon-heart" @click="heartClick(data.row)"></i>
-                </span>
-                <span class="download">
-                    <i class="iconfont icon-download" @click="downloadClick(data.row)"></i>
+                <span class="song-action">
+                    <i class="iconfont icon-heart iconfont-small" @click="heartClick(data.row)"></i>
+                    <i class="iconfont icon-download iconfont-small" @click="downloadClick(data.row)"></i>
                 </span>
             </template>
             <template slot="title" slot-scope="data">
                 <div class="song-title">
-                    <span class="song-name">{{data.row.name}}</span>
+                    <span class="song-name" :title="data.row.name + data.row.aliaText">
+                        {{data.row.name}}
+                        <template v-for="(item, index) in data.row.alia">
+                            <span class="song-alia" :key="index">({{item}})</span>
+                        </template>
+                    </span>
                     <span class="sq" v-if="data.row.sq"><i class="iconfont icon-sq"></i></span>
                     <span class="mv" v-if="data.row.mv" @click="mvClick(data.row)"><i class="iconfont icon-play-block"></i></span>
                 </div>
@@ -50,7 +53,7 @@
                     },
                     {
                         title: ' ',
-                        width: 80,
+                        width: 50,
                         slot: 'action',
                     },
                     {
@@ -83,11 +86,11 @@
                 if(!this.detail || !this.detail.songIds || !Array.isArray(this.detail.songIds) || !this.detail.songIds.length){
                     return
                 }
-                let getData = {
+                let params = {
                     ids: this.detail.songIds.join(',')
                 };
                 this.loading = true;
-                getSongDetail(getData).then(res => {
+                getSongDetail(params).then(res => {
                     let songs = res.songs;
                     let privileges = res.privileges;
                     for (let i = 0; i < songs.length; i++){
@@ -101,6 +104,11 @@
                                 songs[i]['sq'] = this.$isPrivilege('sq', privileges[j]);
                                 break;
                             }
+                        }
+
+                        songs[i]['aliaText'] = '';
+                        for (let j = 0; j < songs[i].alia.length; j++){
+                            songs[i]['aliaText'] += `(${songs[i].alia[j]})`;
                         }
                     }
                     this.data = songs;
